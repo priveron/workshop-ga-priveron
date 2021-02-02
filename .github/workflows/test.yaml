@@ -30,13 +30,12 @@ jobs:
         run: echo Welcome to the Github Actions workshop !
 
       - name: run tests and coverage
-        run: make tests_run > tmp.txt
+        run: |
+          mkdir -p artifact
+          make tests_run > artifact/coverage_outputs.txt
       
       - name: upload artifact
         if: ${{ always() }}
-      - run: |
-          mkdir -p artifact
-          mv tmp.txt > artifact/coverage_outputs.txt
       - uses: actions/upload-artifact@v2
         with:
          name: coverage
