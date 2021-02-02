@@ -34,8 +34,9 @@ jobs:
       
       - name: upload artifact
         if: ${{ always() }}
-      - run: mkdir -p artifact
-      - run: mv tmp.txt > artifact/coverage_outputs.txt
+      - run: |
+          mkdir -p artifact
+          mv tmp.txt > artifact/coverage_outputs.txt
       - uses: actions/upload-artifact@v2
         with:
          name: coverage
