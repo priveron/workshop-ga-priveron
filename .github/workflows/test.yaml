@@ -36,7 +36,7 @@ jobs:
       
       - name: upload artifact
         if: always()
-      - uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v2
         with:
          name: coverage
          path: artifact/coverage_outputs.txt
