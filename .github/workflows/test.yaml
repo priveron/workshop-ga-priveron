@@ -39,7 +39,7 @@ jobs:
         run: |
           make re
           mkdir -p artifact
-          ./functional-test.sh > artifact/function-tests_outputs.txt
+          sh functional-test.sh > artifact/function-tests_outputs.txt
       
       - name: upload unit test
         if: always()
