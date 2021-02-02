@@ -35,7 +35,7 @@ jobs:
           make tests_run > artifact/coverage_outputs.txt
       
       - name: upload artifact
-        if: ${{ always() }}
+        if: always()
       - uses: actions/upload-artifact@v2
         with:
          name: coverage
