@@ -31,8 +31,9 @@ jobs:
 
       - name: run tests and coverage
         run: |
+          make tests_run
           mkdir -p artifact
-          make tests_run > artifact/coverage_outputs.txt
+          make coverage > artifact/coverage_outputs.txt
       
       - name: run fun tests and coverage
         run: |
