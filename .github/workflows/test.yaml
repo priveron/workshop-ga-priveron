@@ -37,7 +37,7 @@ jobs:
       
       - name: run fun tests and coverage
         run: |
-          make
+          make re
           mkdir -p artifact
           ./functional-test.sh > artifact/function-tests_outputs.txt
       
